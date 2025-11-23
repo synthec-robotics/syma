@@ -1,0 +1,43 @@
+Actúa como un desarrollador Frontend Senior y Diseñador UI/UX experto en sitios web tecnológicos de alto impacto ("Awwwards" style).
+
+Tu objetivo es crear una Landing Page estática (HTML, CSS, Vanilla JS) para un proyecto de robótica avanzado llamado "SYMA" (Sistema Modular Auto-ensamblable), desarrollado por el equipo "SYNTHEC".
+
+**CONTEXTO:**
+SYMA es una plataforma de robótica modular para la Industria 5.0, inspirada en los microbots de Big Hero 6 y basada en el diseño SMORES-EP. El sitio debe transmitir: Innovación, Futuro, Ingeniería de Precisión y Elegancia.
+
+**ESTÉTICA Y DISEÑO (CSS):**
+1. **Tema:** Dark Mode moderno. Fondo oscuro (casi negro o azul medianoche profundo) con degradados sutiles.
+2. **Acentos:** Usa colores cian eléctrico (#00f3ff) o azul neón para botones y detalles importantes para dar sensación tecnológica.
+3. **Tipografía:** Usa 'Inter' o 'Roboto' para el cuerpo y una fuente tecnológica como 'Orbitron' o 'Montserrat' (en negrita) para los títulos.
+4. **Glassmorphism:** Usa efectos de cristal esmerilado (background-blur) para las tarjetas de información y el menú de navegación.
+5. **Diseño:** Totalmente responsivo (Mobile-first), usando Flexbox y CSS Grid.
+
+**ESTRUCTURA DEL SITIO (Secciones):**
+
+1.  **Navbar:** Fijo en la parte superior, efecto cristal. Logo "SYNTHEC" a la izquierda, enlaces a secciones a la derecha.
+2.  **Hero Section (Pantalla completa):**
+    * Título Grande: "SYMA"
+    * **EFECTO ESPECIAL:** Debajo del título, quiero un efecto de "Máquina de Escribir" (Typewriter effect) en JavaScript que escriba y borre cíclicamente las frases: "Redefiniendo la Manufactura", "Robótica Modular", "Industria 5.0", "Materia Programable".
+    * Botón CTA (Call to Action): "Ver Prototipo" con efecto de brillo al pasar el mouse (hover).
+3.  **Sobre el Proyecto (About):**
+    * Usa la información del "Abstract" del documento adjunto. Explica qué es SYMA.
+    * Diseño de dos columnas: Texto a un lado, y un placeholder para una imagen 3D o diagrama al otro.
+4.  **Características (Cards):**
+    * 3 Tarjetas con iconos modernos (usa FontAwesome o SVG) para: "Versatilidad", "Robustez", "Bajo Costo".
+    * Animación: Las tarjetas deben flotar ligeramente al pasar el mouse (transform: translateY).
+5.  **Especificaciones Técnicas (Tech Specs):**
+    * Una sección visualmente técnica. Muestra datos como: "Microcontrolador: ESP32", "Comunicación: ESP-NOW", "Locomoción: Diferencial", "Acoplamiento: Electroimanes de Retención".
+    * Usa barras de progreso o iconos de chips para hacerlo visual.
+6.  **El Equipo (SYNTHEC):**
+    * Tarjetas para los miembros: Angel Moreno, Carlos García, Susana Fang, Emiliano Bustamante.
+7.  **Footer:** Elegante, con derechos de autor "© 2025 SYNTHEC Robotics" y enlaces ficticios a redes sociales.
+
+**INTERACTIVIDAD (JavaScript):**
+1.  **Scroll Reveal:** Implementa una función en JS (Intersection Observer) para que los elementos (textos, tarjetas) aparezcan suavemente (fade-in up) a medida que el usuario hace scroll hacia abajo. Que no se vea estático.
+2.  **Typewriter:** El efecto mencionado en el Hero debe ser fluido.
+
+**INFORMACIÓN:**
+Extrae todo el texto, descripciones técnicas y nombres del archivo que te he adjuntado (el reporte del proyecto).
+
+**NOTA:**
+No uses frameworks complejos como React. Quiero código limpio en HTML5, CSS3 y Vanilla JS en archivos separados (index.html, style.css, script.js) para que sea fácil de editar y desplegar.
