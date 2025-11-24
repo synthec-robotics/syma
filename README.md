@@ -146,7 +146,7 @@ SYMA/
 
 | Nombre | Rol |
 |--------|-----|
-| **Angel Moreno** | Líder del Proyecto |
+| **Angel Salazar** | Líder del Proyecto |
 | **Carlos García** | Diseñador Mecánico |
 | **Susana Fang** | Especialista en Electrónica |
 | **Emiliano Bustamante** | Investigador |

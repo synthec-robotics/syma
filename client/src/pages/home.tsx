@@ -391,7 +391,7 @@ function TechSpecsSection() {
 
 function TeamSection() {
   const team = [
-    { name: "Angel Moreno", role: "Lider del Proyecto", photo: angelPhoto },
+    { name: "Angel Salazar", role: "Lider del Proyecto", photo: angelPhoto },
     { name: "Carlos García", role: "Diseñador Mecánico", photo: carlosPhoto },
     { name: "Susana Fang", role: "Especialista en Electrónica", photo: susanaPhoto },
     { name: "Emiliano Bustamante", role: "Investigador", photo: emilianoPhoto },
