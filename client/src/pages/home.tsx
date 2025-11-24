@@ -100,7 +100,7 @@ function Navbar({ scrollToSection, isMenuOpen, setIsMenuOpen }: { scrollToSectio
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2 backdrop-blur-lg bg-card/90 rounded-md mt-2 p-4 border border-border">
+          <div className="md:hidden pb-4 mb-4 space-y-2 backdrop-blur-lg bg-card/90 rounded-md mt-2 p-4 border border-border">
             <MobileNavLink onClick={() => scrollToSection("about")} data-testid="link-about-mobile">Sobre SYMA</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection("features")} data-testid="link-features-mobile">Características</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection("specs")} data-testid="link-specs-mobile">Especificaciones</MobileNavLink>
