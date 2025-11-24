@@ -1,9 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Menu, X, ChevronDown, ArrowDown, Cpu, Wifi, Cog, Magnet, Shapes, Shield, Coins, User, Twitter, Github, Linkedin, Youtube, Box } from "lucide-react";
-import synthecLogo from "@assets/Logo-SYNTHEC_1763940655634.png";
-import symaLogo from "@assets/Logo-SYMA_1763940655635.png";
+import { Separator } from "@/components/ui/separator";
+import { Menu, X, ArrowDown, Cpu, Wifi, Cog, Magnet, Shapes, Shield, Coins, Github, Instagram, Youtube } from "lucide-react";
+import synthecLogo from "@assets/images/Logo-SYNTHEC.png";
+import symaLogo from "@assets/images/Logo-SYMA.png";
+import symaDiagram from "@assets/images/Diagrama-SYMA.png";
+import angelPhoto from "@assets/images/Angel.png";
+import carlosPhoto from "@assets/images/Carlos.png";
+import susanaPhoto from "@assets/images/Susana.png";
+import emilianoPhoto from "@assets/images/Emiliano.png";
 
 const TYPEWRITER_PHRASES = [
   "Redefiniendo la Manufactura",
@@ -11,6 +17,14 @@ const TYPEWRITER_PHRASES = [
   "Industria 5.0",
   "Materia Programable",
 ];
+
+function SectionDivider() {
+  return (
+    <div className="w-full px-4 sm:px-6 lg:px-8">
+      <Separator className="bg-border/50" />
+    </div>
+  );
+}
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,9 +41,13 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar scrollToSection={scrollToSection} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <HeroSection scrollToSection={scrollToSection} />
+      <SectionDivider />
       <AboutSection />
+      <SectionDivider />
       <FeaturesSection />
+      <SectionDivider />
       <TechSpecsSection />
+      <SectionDivider />
       <TeamSection />
       <Footer />
     </div>
@@ -130,9 +148,6 @@ function HeroSection({ scrollToSection }: { scrollToSection: (id: string) => voi
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <ScrollReveal>
           <img src={symaLogo} alt="SYMA" className="h-20 md:h-28 mx-auto mb-8 opacity-90" data-testid="img-syma-logo" />
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-6 tracking-tight" data-testid="text-hero-title">
-            SYMA
-          </h1>
           <div className="h-16 md:h-20 mb-8">
             <TypewriterEffect />
           </div>
@@ -152,10 +167,6 @@ function HeroSection({ scrollToSection }: { scrollToSection: (id: string) => voi
             </span>
           </Button>
         </ScrollReveal>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" data-testid="icon-scroll-indicator">
-        <ChevronDown className="w-8 h-8 text-primary opacity-50" />
       </div>
     </section>
   );
@@ -213,28 +224,30 @@ function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal delay={200}>
             <div className="space-y-6">
-              <p className="text-lg text-foreground leading-relaxed" data-testid="text-about-description-1">
+              <p className="text-lg text-foreground leading-relaxed text-justify" data-testid="text-about-description-1">
                 <span className="text-primary font-semibold">SYMA (Sistema Modular Auto-ensamblable)</span> es una plataforma de robótica modular auto-reconfigurable (MSRR) de bajo costo inspirada en el diseño SMORES-EP y los microbots de Big Hero 6.
               </p>
-              <p className="text-muted-foreground leading-relaxed" data-testid="text-about-description-2">
+              <p className="text-muted-foreground leading-relaxed text-justify" data-testid="text-about-description-2">
                 Nuestro objetivo es desarrollar un prototipo funcional que demuestre locomoción diferencial robusta, comunicación inalámbrica en enjambre y un mecanismo de acoplamiento y desacoplamiento magnético controlado.
               </p>
-              <p className="text-muted-foreground leading-relaxed" data-testid="text-about-description-3">
+              <p className="text-muted-foreground leading-relaxed text-justify" data-testid="text-about-description-3">
                 La arquitectura del módulo está basada en el microcontrolador <span className="text-primary font-medium">ESP32</span>, que gestiona la comunicación a través del protocolo <span className="text-primary font-medium">ESP-NOW</span> por su baja latencia. El sistema de movimiento utiliza servomotores de rotación continua para tracción diferencial.
               </p>
-              <p className="text-muted-foreground leading-relaxed" data-testid="text-about-description-4">
+              <p className="text-muted-foreground leading-relaxed text-justify" data-testid="text-about-description-4">
                 El sistema de acoplamiento emplea <span className="text-primary font-medium">electroimanes de retención (EPMs)</span> controlados por puentes-H, permitiendo una unión mecánicamente sólida sin consumo de energía constante y un desacople activo.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={400}>
-            <Card className="p-8 backdrop-blur-sm bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 rounded-md flex items-center justify-center">
-                <div className="text-center">
-                  <Box className="w-24 h-24 md:w-32 md:h-32 text-primary mb-6 opacity-50 mx-auto" data-testid="icon-module-diagram" />
-                  <p className="text-muted-foreground text-sm" data-testid="text-placeholder">Diagrama del módulo SYMA</p>
-                </div>
+            <Card className="p-4 md:p-6 backdrop-blur-sm bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 max-w-md mx-auto">
+              <div className="aspect-square rounded-md overflow-hidden flex items-center justify-center">
+                <img 
+                  src={symaDiagram} 
+                  alt="Diagrama del módulo SYMA" 
+                  className="w-full h-full object-contain"
+                  data-testid="img-syma-diagram"
+                />
               </div>
             </Card>
           </ScrollReveal>
@@ -287,7 +300,7 @@ function FeaturesSection() {
                   <h3 className="text-2xl font-display font-bold mb-4 text-foreground" data-testid={`text-feature-title-${index}`}>
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed" data-testid={`text-feature-description-${index}`}>
+                  <p className="text-muted-foreground leading-relaxed text-justify" data-testid={`text-feature-description-${index}`}>
                     {feature.description}
                   </p>
                 </Card>
@@ -305,7 +318,7 @@ function TechSpecsSection() {
     { label: "Microcontrolador", value: "ESP32", icon: Cpu },
     { label: "Comunicación", value: "ESP-NOW", icon: Wifi },
     { label: "Locomoción", value: "Diferencial", icon: Cog },
-    { label: "Acoplamiento", value: "Electroimanes de Retención", icon: Magnet },
+    { label: "Acoplamiento", value: "Electroimanes", icon: Magnet },
   ];
 
   return (
@@ -351,7 +364,7 @@ function TechSpecsSection() {
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
                   <div className="text-4xl font-display font-bold text-primary mb-2" data-testid="text-stat-budget">
-                    <span data-testid="text-stat-budget-value">$1,500 MXN</span>
+                    <span data-testid="text-stat-budget-value">$1,250 MXN</span>
                   </div>
                   <p className="text-muted-foreground text-sm" data-testid="text-stat-budget-label">Presupuesto por módulo</p>
                 </div>
@@ -359,7 +372,7 @@ function TechSpecsSection() {
                   <div className="text-4xl font-display font-bold text-primary mb-2" data-testid="text-stat-modules">
                     <span data-testid="text-stat-modules-value">2</span>
                   </div>
-                  <p className="text-muted-foreground text-sm" data-testid="text-stat-modules-label">Módulos prototipo</p>
+                  <p className="text-muted-foreground text-sm" data-testid="text-stat-modules-label">Módulos Alpha y Delta</p>
                 </div>
                 <div>
                   <div className="text-4xl font-display font-bold text-primary mb-2" data-testid="text-stat-sdgs">
@@ -378,10 +391,10 @@ function TechSpecsSection() {
 
 function TeamSection() {
   const team = [
-    { name: "Angel Moreno", role: "Investigador" },
-    { name: "Carlos García", role: "Diseñador Mecánico" },
-    { name: "Susana Fang", role: "Especialista en Electrónica" },
-    { name: "Emiliano Bustamante", role: "Desarrollador de Software" },
+    { name: "Angel Moreno", role: "Lider del Proyecto", photo: angelPhoto },
+    { name: "Carlos García", role: "Diseñador Mecánico", photo: carlosPhoto },
+    { name: "Susana Fang", role: "Especialista en Electrónica", photo: susanaPhoto },
+    { name: "Emiliano Bustamante", role: "Investigador", photo: emilianoPhoto },
   ];
 
   return (
@@ -400,8 +413,12 @@ function TeamSection() {
           {team.map((member, index) => (
             <ScrollReveal key={index} delay={index * 100}>
               <Card className="p-6 text-center backdrop-blur-md bg-card/70 border-border hover:border-primary/40 transition-all duration-300 group hover:-translate-y-2" data-testid={`card-team-${index}`}>
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 mx-auto mb-6 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-300" data-testid={`icon-team-${index}`}>
-                  <User className="w-12 h-12 text-primary opacity-50" />
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 flex items-center justify-center ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300" data-testid={`photo-team-${index}`}>
+                  <img 
+                    src={member.photo} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-display font-bold mb-2 text-foreground" data-testid={`text-team-name-${index}`}>
                   <span data-testid={`text-team-name-value-${index}`}>{member.name}</span>
@@ -430,16 +447,13 @@ function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors hover-elevate active-elevate-2 p-2 rounded-md" aria-label="Twitter" data-testid="link-twitter">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors hover-elevate active-elevate-2 p-2 rounded-md" aria-label="GitHub" data-testid="link-github">
+            <a href="https://github.com/synthec-robotics/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors hover-elevate active-elevate-2 p-2 rounded-md" aria-label="GitHub" data-testid="link-github">
               <Github className="w-5 h-5" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors hover-elevate active-elevate-2 p-2 rounded-md" aria-label="LinkedIn" data-testid="link-linkedin">
-              <Linkedin className="w-5 h-5" />
+            <a href="https://www.instagram.com/synthec.robotics/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors hover-elevate active-elevate-2 p-2 rounded-md" aria-label="Instagram" data-testid="link-instagram">
+              <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors hover-elevate active-elevate-2 p-2 rounded-md" aria-label="YouTube" data-testid="link-youtube">
+            <a href="https://www.youtube.com/@synthec.robotics" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors hover-elevate active-elevate-2 p-2 rounded-md" aria-label="YouTube" data-testid="link-youtube">
               <Youtube className="w-5 h-5" />
             </a>
           </div>
