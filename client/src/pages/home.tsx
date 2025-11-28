@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Menu, X, ArrowDown, Cpu, Wifi, Cog, Magnet, Shapes, Shield, Coins, Github, Instagram, Youtube } from "lucide-react";
 import synthecLogo from "@assets/images/Logo-SYNTHEC.png";
 import symaLogo from "@assets/images/Logo-SYMA.png";
-import symaDiagram from "@assets/images/Diagrama-SYMA.png";
+import symaDiagram from "@assets/images/Diagrama-SYMA.gif";
 import angelPhoto from "@assets/images/Angel.png";
 import carlosPhoto from "@assets/images/Carlos.png";
 import susanaPhoto from "@assets/images/Susana.png";
@@ -241,7 +241,7 @@ function AboutSection() {
 
           <ScrollReveal delay={400}>
             <Card className="p-4 md:p-6 backdrop-blur-sm bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 max-w-md mx-auto">
-              <div className="aspect-square rounded-md overflow-hidden flex items-center justify-center">
+              <div className="border-primary/20 border-2 aspect-square rounded-md overflow-hidden flex items-center justify-center">
                 <img 
                   src={symaDiagram} 
                   alt="Diagrama del módulo SYMA" 
